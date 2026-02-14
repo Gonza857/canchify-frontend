@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen:feature": "node scripts/gen-feature.js",
+    "gonza":  "env-cmd -f .env.gonza next dev",
+    "martin":  "env-cmd -f .env.martin next dev",
+    "fede":  "env-cmd -f .env.fede next dev"
   },
   "dependencies": {
+    "env-cmd": "^11.0.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
