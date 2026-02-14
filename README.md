@@ -45,3 +45,15 @@ como `"nombre":  "env-cmd -f .env.nombre next dev"`
 ```
 npx shadcn@latest add componenteNombre
 ```
+
+## Orden de componentes
+1) Page (mayormente server side pages)
+2) Componente cliente (corre en el cliente)
+3) Servicio (lógica y se conecta con cliente)
+4) Client (hace las peticiónes)
+5) apiClient (axios)
+
+## Nota importante sobre PREFETCH
+Usamos prefetch para pedir los datos para una página generada en el servidor.
+Esto hace que tenga los datos y luego se los hidrate el componente.
+Si es un componente client (`"use client"`) no hacemos prefetch.

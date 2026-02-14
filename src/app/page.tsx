@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-      <>
+      <main>
         <h1>Home!</h1>
         <div className={"flex flex-col gap-2"}>
             <Link href={"/configuracion"}>
@@ -12,6 +12,6 @@ export default function Home() {
                 Click para ver info de usuarios
             </Link>
         </div>
-      </>
+      </main>
   );
 }
