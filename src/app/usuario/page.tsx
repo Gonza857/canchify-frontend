@@ -1,14 +1,15 @@
-import {env} from "@/src/lib/config";
+import {dehydrate, HydrationBoundary} from "@tanstack/react-query";
+import {UsuarioService} from "@/src/features/usuario/services/usuario.service";
+import {prefetchData} from "@/src/lib/prefetcher-helper";
+import {USUARIO_KEYS} from "@/src/features/usuario/types/usuario.keys";
+import UsuarioHome from "@/src/features/usuario/components/usuarios.home";
 
-export default function UsuarioPage () {
+export default async function UsuarioPage () {
+    const query = await prefetchData([USUARIO_KEYS.qty], UsuarioService.getRegisteredUsersQty)
+
     return (
-        <>
-            <h1>Usuario page</h1>
-            <ul>
-                <li>Perfil seleccionado ENV: {env.currentDev}</li>
-                <li>URL Api: {env.apiUrl}</li>
-                <li>Modo: {env.isDev ? 'Desarrollo' : 'Producción'}</li>
-            </ul>
-        </>
+        <HydrationBoundary state={dehydrate(query)}>
+            <UsuarioHome/>
+        </HydrationBoundary>
     )
 };

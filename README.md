@@ -39,4 +39,9 @@ npm run gen:feature -- nombreFeature
 como `"nombre":  "env-cmd -f .env.nombre next dev"`
 5) Luego levantar la aplicación usando su perfil con `npm run nombre`
 6) ¡Listo! Ya levantaste el front con tu perfil y tus datos.
-7) 
+
+## Agregar componentes Shadcn/ui
+
+```
+npx shadcn@latest add componenteNombre
+```
